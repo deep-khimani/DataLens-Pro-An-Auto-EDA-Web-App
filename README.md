@@ -1,6 +1,4 @@
-# DataLens-Pro-An-Auto-EDA-Web-App
-Based on your successful deployment and the fact that your `app.py` is now located in a `DataLens` folder, here is an updated `README.md` file. It includes the new project structure and a direct link to your live app, making it easier for users to access and understand the project.
-
+# DataLens Pro: An Auto EDA Web App
 
 **DataLens** is a powerful and intuitive Streamlit application that allows you to perform automatic Exploratory Data Analysis (EDA) on your CSV files with just a few clicks. Upload your data, and the app will generate a data preview, key statistics, and interactive visualizations, helping you quickly gain insights into your dataset.
 
@@ -36,8 +34,8 @@ Make sure you have Python installed on your system.
 
 1.  Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/deep-khimani/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/deep-khimani/DataLens-Pro-An-Auto-EDA-Web-App.git
+    cd DataLens-Pro-An-Auto-EDA-Web-App
     ```
 2.  Install the required Python libraries using the `requirements.txt` file:
     ```bash
@@ -62,10 +60,16 @@ Make sure you have Python installed on your system.
 
 ```
 ├── DataLens/         
-│   ├── app.py       
-├── requirements.txt 
-└── README.md        
+│   ├── app.py        
+├── requirements.txt  
+└── README.md         
 ```
+
+-----
+
+## 🤝 Contributing
+
+Contributions are welcome\! If you have suggestions for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
 -----
 
