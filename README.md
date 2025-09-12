@@ -70,9 +70,3 @@ Make sure you have Python installed on your system.
 ## 🤝 Contributing
 
 Contributions are welcome\! If you have suggestions for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
-
------
-
-## 🤝 Contributing
-
-Contributions are welcome\! If you have suggestions for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
