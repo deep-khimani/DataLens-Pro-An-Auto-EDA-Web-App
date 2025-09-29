@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from eda_functions import get_data_preview, get_statistics, create_chart_with_api, get_ai_recommendations
 from chart_logic import get_compatible_columns, get_chart_requirements
+import logging
 
 load_dotenv()
 
@@ -174,8 +175,44 @@ def get_ai_recommendations_route():
     except Exception as e:
         return jsonify({'error': f'Error getting AI recommendations: {str(e)}'}), 500
 
+
+
+# Configure logging for production
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    try:
+        # Get port from environment variable (Render sets this automatically)
+        port = int(os.environ.get("PORT", 5000))
+        logging.info(f"Starting Flask app on port {port}")
+
+        # Verify critical environment variables
+        required_vars = ["AI21_API_KEY", "MONGODB_URI", "DB_NAME"]
+        missing_vars = [var for var in required_vars if not os.getenv(var)]
+
+        if missing_vars:
+            logging.error(f"Missing environment variables: {missing_vars}")
+            # You can choose to exit or continue with warnings
+            # sys.exit(1)  # Uncomment this line if you want to fail fast
+
+        # Production settings
+        app.run(
+            debug=False,  # Never use debug=True in production
+            host="0.0.0.0",  # Bind to all interfaces
+            port=port,
+            threaded=True  # Enable threading for better performance
+        )
+
+    except ValueError as e:
+        logging.error(f"Invalid PORT environment variable: {e}")
+        # Fallback to default port
+        app.run(debug=False, host="0.0.0.0", port=5000)
+    except Exception as e:
+        logging.error(f"Failed to start Flask app: {e}")
+        raise
+
 
 
