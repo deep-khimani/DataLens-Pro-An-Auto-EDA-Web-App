@@ -2,6 +2,7 @@ flask
 gunicorn
 pandas
 numpy
+matplotlib
 python-dotenv
 openai
 werkzeug
