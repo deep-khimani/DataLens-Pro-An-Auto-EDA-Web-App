@@ -20,7 +20,7 @@
 
 You can access the deployed version of the app here:
 
-[**[https://datalens-auto-eda.streamlit.app/](https://datalens-auto-eda.streamlit.app/)**](https://datalens-pro-an-auto-eda-web-app.onrender.com/)
+(https://datalens-pro-an-auto-eda-web-app.onrender.com/)
 
 -----
 
