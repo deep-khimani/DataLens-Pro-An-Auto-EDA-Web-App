@@ -177,7 +177,6 @@ def get_ai_recommendations_route():
 
 
 
-# Configure logging for production
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -185,11 +184,9 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     try:
-        # Get port from environment variable (Render sets this automatically)
         port = int(os.environ.get("PORT", 5000))
         logging.info(f"Starting Flask app on port {port}")
 
-        # Verify critical environment variables
         required_vars = ["AI21_API_KEY", "MONGODB_URI", "DB_NAME"]
         missing_vars = [var for var in required_vars if not os.getenv(var)]
 
@@ -198,7 +195,6 @@ if __name__ == "__main__":
             # You can choose to exit or continue with warnings
             # sys.exit(1)  # Uncomment this line if you want to fail fast
 
-        # Production settings
         app.run(
             debug=False,  # Never use debug=True in production
             host="0.0.0.0",  # Bind to all interfaces
@@ -213,6 +209,7 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"Failed to start Flask app: {e}")
         raise
+
 
 
 
