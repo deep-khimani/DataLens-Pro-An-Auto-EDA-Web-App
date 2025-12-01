@@ -1,6 +1,6 @@
 # DataLens Pro: An Auto EDA Web App
 
-**DataLens** is a powerful and intuitive Streamlit application that allows you to perform automatic Exploratory Data Analysis (EDA) on your CSV files with just a few clicks. Upload your data, and the app will generate a data preview, key statistics, and interactive visualizations, helping you quickly gain insights into your dataset.
+**DataLens** is a powerful and intuitive Flask application that allows you to perform automatic Exploratory Data Analysis (EDA) on your CSV files with just a few clicks. Upload your data, and the app will generate a data preview, key statistics, and interactive visualizations, helping you quickly gain insights into your dataset.
 
 ## ✨ Features
 
@@ -48,9 +48,9 @@ Make sure you have Python installed on your system.
     ```bash
     cd DataLens
     ```
-2.  Run the Streamlit application:
+2.  Run the Flask application:
     ```bash
-    streamlit run app.py
+    Flask run app.py
     ```
 3.  The app will automatically open in your web browser. If it doesn't, navigate to `http://localhost:8501`.
 
