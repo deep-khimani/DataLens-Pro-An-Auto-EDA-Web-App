@@ -103,7 +103,6 @@ CHART_REQUIREMENTS = {
 }
 
 def get_column_type(df, column):
-    """Determine column type for chart compatibility"""
     if pd.api.types.is_datetime64_any_dtype(df[column]):
         return 'datetime'
     elif pd.api.types.is_numeric_dtype(df[column]):
@@ -112,7 +111,6 @@ def get_column_type(df, column):
         return 'categorical'
 
 def get_compatible_columns(df, chart_type):
-    """Get columns compatible with the selected chart type"""
     if chart_type not in CHART_REQUIREMENTS:
         return {'x_columns': [], 'y_columns': [], 'requires_y': False, 'show_x': True, 'show_y': True}
     
@@ -121,7 +119,6 @@ def get_compatible_columns(df, chart_type):
     x_compatible = []
     y_compatible = []
     
-    # Get compatible columns based on data types
     for column in df.columns:
         col_type = get_column_type(df, column)
         
@@ -142,5 +139,5 @@ def get_compatible_columns(df, chart_type):
     }
 
 def get_chart_requirements(chart_type):
-    """Get requirements for a specific chart type"""
     return CHART_REQUIREMENTS.get(chart_type, {})
+
