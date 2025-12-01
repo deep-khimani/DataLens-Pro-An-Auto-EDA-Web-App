@@ -413,3 +413,4 @@ def get_ai_recommendations(df, x_column=None, y_column=None, chart_type=None, si
             f"🎯 This chart type effectively shows your data patterns",
             f"💡 Make sure your data is clean for best results"
         ]
+
